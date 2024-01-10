@@ -110,6 +110,7 @@
 			width: 100%;
 			height: 100%;
 			position: relative;
+			overflow: hidden;
 		}
 
 		figcaption {
@@ -156,6 +157,44 @@
 		figure:hover main,
 		figure:hover footer {
 			opacity: 1;
+		}
+
+		figcaption main{
+			transform: translate3d(0,-3rem,0);
+			opacity: 0;
+			transition-property: transform,opacity;
+		}
+		figure:hover figcaption main{
+			transform: translate3d(0,0,0);
+			opacity: 1;
+		}
+
+		figure a img{
+			transform: scale(1.2);
+			transition-property: tansform;
+		}
+		figure:hover a img{
+			transform: scale(1);
+		}
+	
+		footer img{
+			transform: translate3d(-6rem,0,0) rotate(720deg);
+			opacity: 0;
+			transition-property: transform, opacity;
+			transition-delay: var(--def-transition-duration);
+		}
+
+		figure:hover footer img{
+			transform: translate3d(0,0,0);
+			opacity: 1;
+		}
+		figure, 
+		figcaption,
+		figcaption main,
+		figure a img,
+		footer img{
+			transition-duration: var(--def-transition-duration);
+			transition-timing-function: ease-in-out;
 		}
 
 		/* Air */
